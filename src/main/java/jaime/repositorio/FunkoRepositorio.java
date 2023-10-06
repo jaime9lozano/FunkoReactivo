@@ -1,5 +1,8 @@
 package jaime.repositorio;
 
-public interface FunkoRepositorio<T, ID> {
+import jaime.modelos.Funko;
+import reactor.core.publisher.Flux;
 
+public interface FunkoRepositorio extends CrudRepositorio<Funko, Long>{
+    Flux<Funko> findByNombre(String nombre);
 }

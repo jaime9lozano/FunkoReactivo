@@ -11,13 +11,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicBoolean;
+
 
 public class LeerCSV {
     private static LeerCSV instance;
     MyIDStore m = MyIDStore.getInstance();
     private LeerCSV() {
-
+        crearJson().subscribe();
     }
     public static LeerCSV getInstance() {
         if(instance==null){
@@ -37,7 +37,7 @@ public class LeerCSV {
         String dir = ruta + File.separator + "data";
         return dir + File.separator + "funkos.json";
     }
-    public Flux<Funko> leerCsv() {
+    private Flux<Funko> leerCsv() {
         return Flux.defer(() -> {
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(csv()));
@@ -64,7 +64,7 @@ public class LeerCSV {
             }
         });
     }
-    public Mono<Void> crearJson() {
+    private Mono<Void> crearJson() {
         Flux<Funko> funkoFlux = leerCsv();
         String jsonFilePath = json();
         return funkoFlux
@@ -117,12 +117,5 @@ public class LeerCSV {
                 throw new RuntimeException("Error al escribir el JSON en el archivo: " + jsonFilePath, e);
             }
         });
-    }
-
-    public static void main(String[] args) {
-        LeerCSV leerCSV = LeerCSV.getInstance();
-
-        leerCSV.crearJson()
-                .subscribe(System.out::println);
     }
 }
