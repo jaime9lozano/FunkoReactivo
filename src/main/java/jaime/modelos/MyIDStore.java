@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class MyIDStore {
     private static MyIDStore instance=null;
-    private int cont=0;
+    private int cont=1;
     private final Lock lockCont = new ReentrantLock(true);
     private MyIDStore(){
 

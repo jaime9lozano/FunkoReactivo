@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jaime/excepciones/FunkoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jaime/excepciones/FunkoNoAlmacenado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jaime/excepciones/FunkoNoEncontrado.java" afterDir="false" />
+    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/LeerCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/MyIDStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/MyIDStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/Tipos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +73,40 @@
       <recent name="C:\Users\jaime\Documents\DAW2\Jose luis\FunkoReac" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.LeerCSV">
+    <configuration name="LeerCSV" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jaime.servicios.LeerCSV" />
+      <module name="FunkoReac.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jaime.servicios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jaime.Main" />
+      <module name="FunkoReac.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jaime.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LeerCSV" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,7 +116,11 @@
       <option name="presentableId" value="Default" />
       <updated>1696529283231</updated>
       <workItem from="1696529284235" duration="2069000" />
-      <workItem from="1696542665145" duration="596000" />
+      <workItem from="1696542665145" duration="886000" />
+      <workItem from="1696544090588" duration="591000" />
+      <workItem from="1696544795737" duration="814000" />
+      <workItem from="1696545932905" duration="338000" />
+      <workItem from="1696546284501" duration="7531000" />
     </task>
     <task id="LOCAL-00001" summary="v 0.1">
       <option name="closed" value="true" />
@@ -95,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696542757446</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="v 0.3">
+      <option name="closed" value="true" />
+      <created>1696543550267</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696543550267</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +166,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v 0.1" />
     <MESSAGE value="v 0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.2" />
+    <MESSAGE value="v 0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.3" />
   </component>
 </project>
