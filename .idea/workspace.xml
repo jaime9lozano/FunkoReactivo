@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.7">
+    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.7.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/MyIDStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/MyIDStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorioImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorioImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/servicios/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoCacheImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoCacheImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoServicioImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoServicioImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +175,8 @@
       <workItem from="1696850102080" duration="4167000" />
       <workItem from="1696874401341" duration="73000" />
       <workItem from="1696933919256" duration="6318000" />
-      <workItem from="1696944962242" duration="4972000" />
+      <workItem from="1696944962242" duration="5327000" />
+      <workItem from="1696950794081" duration="2957000" />
     </task>
     <task id="LOCAL-00001" summary="v 0.1">
       <option name="closed" value="true" />
@@ -245,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696940581141</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v 0.7.1">
+      <option name="closed" value="true" />
+      <created>1696950299022</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696950299022</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +275,7 @@
     <MESSAGE value="v 0.5" />
     <MESSAGE value="v 0.6" />
     <MESSAGE value="v 0.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.7" />
+    <MESSAGE value="v 0.7.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.7.1" />
   </component>
 </project>

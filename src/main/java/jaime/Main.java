@@ -37,8 +37,11 @@ public class Main {
         System.out.println("--------------------------------------------TODOS METIDOS---------------------------------------------");
         System.out.println("Funko mas caro");
         funkoServicio.funkoCaro().subscribe(System.out::println);
-        System.out.println("Media funkos");
-        funkoServicio.mediaFunko().subscribe(System.out::println);
+        //System.out.println("Media funkos");
+        //funkoServicio.mediaFunko().subscribe(System.out::println);
+       //System.out.println("Funkos agrupados por modelo");
+       //funkoServicio.agrupModelo().subscribe(System.out::println);
+
         System.exit(0);
     }
 }

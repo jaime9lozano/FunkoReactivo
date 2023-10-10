@@ -3,12 +3,15 @@ package jaime.servicios;
 import jaime.excepciones.FunkoNoEncontrado;
 import jaime.modelos.Funko;
 import jaime.modelos.Notificacion;
+import jaime.modelos.Tipos;
 import jaime.repositorio.FunkoRepositorio;
 import jaime.repositorio.FunkoRepositorioImp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.Map;
 
 public class FunkoServicioImp implements FunkoServicio{
     private static final int CACHE_SIZE = 15;
@@ -112,5 +115,9 @@ public class FunkoServicioImp implements FunkoServicio{
     public Mono<Double> mediaFunko(){
         logger.debug("Buscando la media de los funkos");
         return funkosRepository.mediaFunko();
+    }
+    public Flux<Map<Tipos, Integer>> agrupModelo(){
+        logger.debug("Buscando todos los funkos agrupados por modelo");
+        return funkosRepository.agrupModelo();
     }
 }

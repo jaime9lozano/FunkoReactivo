@@ -12,6 +12,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class FunkoRepositorioImp implements FunkoRepositorio{
@@ -196,6 +198,26 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
                 ).flatMap(result -> Mono.from(result.map((row, rowMetadata) ->
                         row.get("media_precios", Double.class)
                 ))),
+                Connection::close
+        );
+    }
+
+    @Override
+    public Flux<Map<Tipos, Integer>> agrupModelo() {
+        logger.debug("Buscando los funkos agrupados por modelos");
+        String sql = "SELECT modelo,count(*) as cuenta FROM FUNKOS GROUP BY modelo ORDER BY modelo";
+        return Flux.usingWhen(
+                connectionFactory.create(),
+                connection -> Flux.from(connection.createStatement(sql)
+                        .execute()
+                ).flatMap(result -> result.map((row, rowMetadata) -> {
+                    String modelo = row.get("modelo", String.class);
+                    int cuenta = Integer.parseInt(row.get("cuenta", String.class));
+                    Tipos tipoEnum = Tipos.valueOf(modelo);
+                    Map<Tipos, Integer> resultMap = new HashMap<>();
+                    resultMap.put(tipoEnum, cuenta);
+                    return resultMap;
+                })),
                 Connection::close
         );
     }
