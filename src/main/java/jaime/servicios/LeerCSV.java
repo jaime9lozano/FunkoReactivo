@@ -17,7 +17,6 @@ public class LeerCSV {
     private static LeerCSV instance;
     MyIDStore m = MyIDStore.getInstance();
     private LeerCSV() {
-        crearJson().subscribe();
     }
     public static LeerCSV getInstance() {
         if(instance==null){
@@ -37,7 +36,7 @@ public class LeerCSV {
         String dir = ruta + File.separator + "data";
         return dir + File.separator + "funkos.json";
     }
-    private Flux<Funko> leerCsv() {
+    public Flux<Funko> leerCsv() {
         return Flux.defer(() -> {
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(csv()));

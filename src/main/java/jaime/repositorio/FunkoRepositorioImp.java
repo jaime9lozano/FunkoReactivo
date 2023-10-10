@@ -33,9 +33,9 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
                 connection -> Flux.from(connection.createStatement(sql).execute())
                         .flatMap(result -> result.map((row, rowMetadata) ->
                                 Funko.builder()
-                                        .cod(row.get("id", UUID.class))
+                                        .cod(row.get("cod", UUID.class))
                                         .nombre(row.get("nombre", String.class))
-                                        .tipo(row.get("modelos", Tipos.class))
+                                        .tipo(Tipos.valueOf(row.get("modelo", String.class)))
                                         .precio(row.get("precio", Double.class))
                                         .fecha_cre(row.get("fecha_lanzamiento", LocalDate.class))
                                         .myID(row.get("MyID", Long.class))
@@ -55,9 +55,9 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
                         .execute()
                 ).flatMap(result -> Mono.from(result.map((row, rowMetadata) ->
                         Funko.builder()
-                                .cod(row.get("id", UUID.class))
+                                .cod(row.get("cod", UUID.class))
                                 .nombre(row.get("nombre", String.class))
-                                .tipo(row.get("modelos", Tipos.class))
+                                .tipo(Tipos.valueOf(row.get("modelo", String.class)))
                                 .precio(row.get("precio", Double.class))
                                 .fecha_cre(row.get("fecha_lanzamiento", LocalDate.class))
                                 .myID(row.get("MyID", Long.class))
@@ -69,14 +69,14 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Mono<Funko> save(Funko funko) {
-        String sql = "INSERT INTO FUNKOS (cod,nombre,modelos,precio,fecha_lanzamiento,MyID,created_up,updated_up) VALUES (?, ?, ?, ?, ?,?,?,?)";
+        String sql = "INSERT INTO FUNKOS (cod,nombre,modelo,precio,fecha_lanzamiento,MyID,created_at,updated_at) VALUES (?, ?, ?, ?, ?,?,?,?)";
         LocalDate hoy = LocalDate.now();
         return Mono.usingWhen(
                 connectionFactory.create(),
                 connection -> Mono.from(connection.createStatement(sql)
                         .bind(0, funko.cod())
                         .bind(1, funko.nombre())
-                        .bind(2, funko.tipo())
+                        .bind(2, funko.tipo().toString())
                         .bind(3, funko.precio())
                         .bind(4, funko.fecha_cre())
                         .bind(5,funko.myID())
@@ -90,13 +90,13 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Mono<Funko> update(Funko funko) {
-        String query = "UPDATE FUNKOS SET nombre = ?, modelos = ?, precio = ?,updated_up = ? WHERE MyID = ?";
+        String query = "UPDATE FUNKOS SET nombre = ?, modelo = ?, precio = ?,updated_at = ? WHERE MyID = ?";
         LocalDate hoy = LocalDate.now();
         return Mono.usingWhen(
                 connectionFactory.create(),
                 connection -> Mono.from(connection.createStatement(query)
                         .bind(0, funko.nombre())
-                        .bind(1, funko.tipo())
+                        .bind(1, funko.tipo().toString())
                         .bind(2, funko.precio())
                         .bind(3,hoy)
                         .bind(4,funko.myID())
@@ -142,9 +142,9 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
                         .execute()
                 ).flatMap(result -> result.map((row, rowMetadata) ->
                         Funko.builder()
-                                .cod(row.get("id", UUID.class))
+                                .cod(row.get("cod", UUID.class))
                                 .nombre(row.get("nombre", String.class))
-                                .tipo(row.get("modelos", Tipos.class))
+                                .tipo(Tipos.valueOf(row.get("modelo", String.class)))
                                 .precio(row.get("precio", Double.class))
                                 .fecha_cre(row.get("fecha_lanzamiento", LocalDate.class))
                                 .myID(row.get("MyID", Long.class))
