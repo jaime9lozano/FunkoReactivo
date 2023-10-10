@@ -6,6 +6,8 @@ import io.r2dbc.spi.Result;
 import jaime.modelos.Funko;
 import jaime.modelos.Tipos;
 import jaime.servicios.DatabaseManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -13,6 +15,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public class FunkoRepositorioImp implements FunkoRepositorio{
+    private final Logger logger = LoggerFactory.getLogger(FunkoRepositorioImp.class);
     private static FunkoRepositorioImp instance;
     private final ConnectionPool connectionFactory;
     private FunkoRepositorioImp(DatabaseManager databaseManager) {
@@ -27,6 +30,7 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
     }
     @Override
     public Flux<Funko> findAll() {
+        logger.debug("Buscando todos los funkos");
         String sql = "SELECT * FROM FUNKOS";
         return Flux.usingWhen(
                 connectionFactory.create(),
@@ -47,6 +51,7 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Mono<Funko> findById(Long id) {
+        logger.debug("Buscando funko por id: " + id);
         String sql = "SELECT * FROM FUNKOS WHERE id = ?";
         return Mono.usingWhen(
                 connectionFactory.create(),
@@ -69,6 +74,7 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Mono<Funko> save(Funko funko) {
+        logger.debug("Guardando funko: " + funko);
         String sql = "INSERT INTO FUNKOS (cod,nombre,modelo,precio,fecha_lanzamiento,MyID,created_at,updated_at) VALUES (?, ?, ?, ?, ?,?,?,?)";
         LocalDate hoy = LocalDate.now();
         return Mono.usingWhen(
@@ -90,6 +96,7 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Mono<Funko> update(Funko funko) {
+        logger.debug("Actualizando funko: " + funko);
         String query = "UPDATE FUNKOS SET nombre = ?, modelo = ?, precio = ?,updated_at = ? WHERE MyID = ?";
         LocalDate hoy = LocalDate.now();
         return Mono.usingWhen(
@@ -108,6 +115,7 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Mono<Boolean> deleteById(Long id) {
+        logger.debug("Borrando funko por id: " + id);
         String sql = "DELETE FROM FUNKOS WHERE id = ?";
         return Mono.usingWhen(
                 connectionFactory.create(),
@@ -122,6 +130,7 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Mono<Void> deleteAll() {
+        logger.debug("Borrando todos los funkos");
         String sql = "DELETE FROM FUNKOS";
         return Mono.usingWhen(
                 connectionFactory.create(),
@@ -134,6 +143,7 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
 
     @Override
     public Flux<Funko> findByNombre(String nombre) {
+        logger.debug("Buscando todos los funkos por nombre");
         String sql = "SELECT * FROM FUNKOS WHERE nombre LIKE ?";
         return Flux.usingWhen(
                 connectionFactory.create(),
@@ -150,6 +160,42 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
                                 .myID(row.get("MyID", Long.class))
                                 .build()
                 )),
+                Connection::close
+        );
+    }
+    @Override
+    public Mono<Funko> funkoCaro(){
+        logger.debug("Buscando el funko mas caro");
+        String sql = "SELECT * FROM FUNKOS ORDER BY precio DESC LIMIT 1";
+        return Mono.usingWhen(
+                connectionFactory.create(),
+                connection -> Mono.from(connection.createStatement(sql)
+                        .execute()
+                ).flatMap(result -> Mono.from(result.map((row, rowMetadata) ->
+                        Funko.builder()
+                                .cod(row.get("cod", UUID.class))
+                                .nombre(row.get("nombre", String.class))
+                                .tipo(Tipos.valueOf(row.get("modelo", String.class)))
+                                .precio(row.get("precio", Double.class))
+                                .fecha_cre(row.get("fecha_lanzamiento", LocalDate.class))
+                                .myID(row.get("MyID", Long.class))
+                                .build()
+                ))),
+                Connection::close
+        );
+    }
+
+    @Override
+    public Mono<Double> mediaFunko() {
+        logger.debug("Buscando la media del precio");
+        String sql = "SELECT AVG(precio) AS media_precios FROM FUNKOS";
+        return Mono.usingWhen(
+                connectionFactory.create(),
+                connection -> Mono.from(connection.createStatement(sql)
+                        .execute()
+                ).flatMap(result -> Mono.from(result.map((row, rowMetadata) ->
+                        row.get("media_precios", Double.class)
+                ))),
                 Connection::close
         );
     }

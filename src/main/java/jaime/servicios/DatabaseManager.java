@@ -6,6 +6,8 @@ import io.r2dbc.spi.Connection;
 import io.r2dbc.spi.ConnectionFactories;
 import io.r2dbc.spi.ConnectionFactory;
 import io.r2dbc.spi.Statement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Mono;
 
 import java.io.*;
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 public class DatabaseManager {
     private static DatabaseManager instance;
     private final ConnectionFactory connectionFactory;
+    private final Logger logger = LoggerFactory.getLogger(DatabaseManager.class);
     private final ConnectionPool pool;
     private String databaseUsername = "sa"; // Fichero de configuración se lee en el constructor
     private String databasePassword = ""; // Fichero de configuración se lee en el constructor
@@ -46,6 +49,7 @@ public class DatabaseManager {
     }
     private synchronized void loadProperties() {
         try {
+            logger.debug("Cargando fichero de configuración de la base de datos");
             var file = ClassLoader.getSystemResource("database.properties").getFile();
             var props = new Properties();
             props.load(new FileReader(file));
@@ -54,19 +58,25 @@ public class DatabaseManager {
             databaseUsername = props.getProperty("database.username", "sa");
             databasePassword = props.getProperty("database.password", "");
             databaseInitTables = Boolean.parseBoolean(props.getProperty("database.initTables", "true"));
+            logger.debug("La url de la base de datos es: " + databaseUrl);
         } catch (IOException e) {
-
+            logger.error("Error al leer el fichero de configuración de la base de datos " + e.getMessage());
         }
     }
     public synchronized void initTables() {
         // Debes hacer un script por accion
+        logger.debug("Borrando tablas de la base de datos");
         executeScript("remove.sql").block(); // Bloqueamos hasta que se ejecute (no nos interesa seguir hasta que se ejecute)
+        logger.debug("Inicializando tablas de la base de datos");
         executeScript("init.sql").block(); // Bloqueamos hasta que se ejecute (no nos interesa seguir hasta que se ejecute)
+        logger.debug("Tabla de la base de datos inicializada");
     }
     public Mono<Void> executeScript(String scriptSqlFile) {
+        logger.debug("Ejecutando script de inicialización de la base de datos: " + scriptSqlFile);
         return Mono.usingWhen(
                 connectionFactory.create(),
                 connection -> {
+                    logger.debug("Creando conexión con la base de datos");
                  String scriptContent = null;
                  try{
                      try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream(scriptSqlFile)){

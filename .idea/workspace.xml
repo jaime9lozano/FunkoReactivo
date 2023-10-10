@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.6">
+    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/funkos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/funkos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/MyIDStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/MyIDStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorioImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorioImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/servicios/LeerCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/LeerCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/servicios/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoCacheImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoCacheImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoServicioImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/servicios/FunkoServicioImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,21 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,24 +67,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "featured",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac/src/main/java/jaime/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;featured&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac/src/main/java/jaime/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jaime\Documents\DAW2\Jose luis\FunkoReac" />
@@ -112,8 +130,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FunkoReac [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FunkoReac [clean]" />
         <item itemvalue="Application.MyIDStore" />
         <item itemvalue="Application.LeerCSV" />
         <item itemvalue="Application.Main" />
@@ -137,7 +178,8 @@
       <workItem from="1696590536639" duration="5265000" />
       <workItem from="1696850102080" duration="4167000" />
       <workItem from="1696874401341" duration="73000" />
-      <workItem from="1696933919256" duration="6270000" />
+      <workItem from="1696933919256" duration="6318000" />
+      <workItem from="1696944962242" duration="4972000" />
     </task>
     <task id="LOCAL-00001" summary="v 0.1">
       <option name="closed" value="true" />
@@ -195,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696854129767</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="v 0.7">
+      <option name="closed" value="true" />
+      <created>1696940581141</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696940581141</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +269,7 @@
     <MESSAGE value="v 0.4" />
     <MESSAGE value="v 0.5" />
     <MESSAGE value="v 0.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.6" />
+    <MESSAGE value="v 0.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.7" />
   </component>
 </project>

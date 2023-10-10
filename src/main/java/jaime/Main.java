@@ -1,15 +1,13 @@
 package jaime;
 
-import jaime.modelos.Funko;
-import jaime.modelos.Tipos;
+
 import jaime.repositorio.FunkoRepositorioImp;
 import jaime.servicios.DatabaseManager;
 import jaime.servicios.FunkoNotificacionImp;
 import jaime.servicios.FunkoServicioImp;
 import jaime.servicios.LeerCSV;
-
-import java.time.LocalDate;
-import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,8 +35,10 @@ public class Main {
         );
         l.leerCsv().subscribe(funko -> funkoServicio.save(funko).subscribe());
         System.out.println("--------------------------------------------TODOS METIDOS---------------------------------------------");
-        funkoServicio.findAll().subscribe(System.out::println);
-
+        System.out.println("Funko mas caro");
+        funkoServicio.funkoCaro().subscribe(System.out::println);
+        System.out.println("Media funkos");
+        funkoServicio.mediaFunko().subscribe(System.out::println);
         System.exit(0);
     }
 }
