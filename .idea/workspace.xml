@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.8">
-      <change afterPath="$PROJECT_DIR$/src/test/java/jaime/repositorio/FunkoRepositorioImpTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/database.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/remove.sql" afterDir="false" />
+    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/modelos/Funko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jaime/servicios/FunkoServicioImpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jaime/servicios/FunkoServicioImpTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,29 +61,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "android.gradle.sync.needed": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "featured",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac/src/test/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac/src/main/java/jaime/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;featured&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac/src/test/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/jaime/Documents/DAW2/Jose luis/FunkoReac/src/main/java/jaime/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jaime\Documents\DAW2\Jose luis\FunkoReac\src\test\resources" />
@@ -97,34 +97,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="jaime.servicios" />
       <recent name="jaime.repositorio" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FunkoRepositorioImpTest">
-    <configuration name="FunkoRepositorioImpTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;jaime.repositorio.FunkoRepositorioImpTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.FunkoServicioImpTest.fecha2023">
     <configuration name="FunkoRepositorioImpTest.fecha2023" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -149,7 +126,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FunkoRepositorioImpTest.findById" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FunkoServicioImpTest.deleteAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -162,7 +139,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;jaime.repositorio.FunkoRepositorioImpTest.findById&quot;" />
+            <option value="&quot;jaime.servicios.FunkoServicioImpTest.deleteAll&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -173,7 +150,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FunkoRepositorioImpTest.findByNombre" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FunkoServicioImpTest.deleteById" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -186,7 +163,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;jaime.repositorio.FunkoRepositorioImpTest.findByNombre&quot;" />
+            <option value="&quot;jaime.servicios.FunkoServicioImpTest.deleteById&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,7 +174,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FunkoRepositorioImpTest.funkoCaro" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FunkoServicioImpTest.fecha2023" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -210,7 +187,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;jaime.repositorio.FunkoRepositorioImpTest.funkoCaro&quot;" />
+            <option value="&quot;jaime.servicios.FunkoServicioImpTest.fecha2023&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FunkoServicioImpTest.funkoCaro" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;jaime.servicios.FunkoServicioImpTest.funkoCaro&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -223,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FunkoRepositorioImpTest" />
+        <item itemvalue="Gradle.FunkoServicioImpTest.fecha2023" />
         <item itemvalue="Gradle.FunkoRepositorioImpTest.fecha2023" />
-        <item itemvalue="Gradle.FunkoRepositorioImpTest.findById" />
-        <item itemvalue="Gradle.FunkoRepositorioImpTest.findByNombre" />
-        <item itemvalue="Gradle.FunkoRepositorioImpTest.funkoCaro" />
+        <item itemvalue="Gradle.FunkoServicioImpTest.funkoCaro" />
+        <item itemvalue="Gradle.FunkoServicioImpTest.deleteAll" />
+        <item itemvalue="Gradle.FunkoServicioImpTest.deleteById" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +255,8 @@
       <workItem from="1696961885878" duration="26000" />
       <workItem from="1696963303570" duration="64000" />
       <workItem from="1697023038957" duration="1771000" />
-      <workItem from="1697025818192" duration="3985000" />
+      <workItem from="1697025818192" duration="4230000" />
+      <workItem from="1697031896380" duration="3878000" />
     </task>
     <task id="LOCAL-00001" summary="v 0.1">
       <option name="closed" value="true" />
@@ -344,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697025721006</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="v 0.9">
+      <option name="closed" value="true" />
+      <created>1697030061905</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697030061905</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,6 +382,11 @@
     <MESSAGE value="v 0.7.1" />
     <MESSAGE value="v 0.7.2" />
     <MESSAGE value="v 0.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.8" />
+    <MESSAGE value="v 0.9" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.9" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
