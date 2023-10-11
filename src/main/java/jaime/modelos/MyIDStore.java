@@ -1,11 +1,13 @@
 package jaime.modelos;
 
+import reactor.core.publisher.Mono;
+
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MyIDStore {
     private static MyIDStore instance=null;
-    private int cont=0;
+    private Long cont= 1L;
     private final Lock lockCont = new ReentrantLock(true);
     private MyIDStore(){
 
@@ -17,12 +19,13 @@ public class MyIDStore {
         return instance;
     }
 
-    public int addandgetID(){
-        lockCont.lock();
-        try {
-            return this.cont++;
-        } finally {
-            lockCont.unlock();
+    public Long addandgetID(){
+
+            lockCont.lock();
+            try {
+                return this.cont++;
+            } finally {
+                lockCont.unlock();
+            }
         }
-    }
 }

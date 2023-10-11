@@ -10,6 +10,9 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.10.1")
+
     implementation("io.projectreactor:reactor-core:3.5.10")
 
     implementation("io.r2dbc:r2dbc-h2:1.0.0.RELEASE")

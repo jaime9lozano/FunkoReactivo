@@ -1,5 +1,5 @@
 package jaime.modelos;
 
-public enum Tipo {
+public enum Tipos {
     MARVEL, DISNEY, ANIME, OTROS
 }
