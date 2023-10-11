@@ -117,7 +117,11 @@ public class FunkoServicioImp implements FunkoServicio{
         return funkosRepository.mediaFunko();
     }
     public Flux<Map<Tipos, Integer>> agrupModelo(){
-        logger.debug("Buscando todos los funkos agrupados por modelo");
+        logger.debug("Buscando cuantos funkos hay agrupados por cada modelo");
         return funkosRepository.agrupModelo();
+    }
+    public Flux<Funko> fecha2023(){
+        logger.debug("Buscando todos los funkos lanzados en 2023");
+        return funkosRepository.fecha2023();
     }
 }

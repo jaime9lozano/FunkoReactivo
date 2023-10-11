@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.7.1">
+    <list default="true" id="03923e86-c625-4d3b-b037-faffa44671b4" name="Changes" comment="v 0.7.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaime/repositorio/FunkoRepositorio.java" afterDir="false" />
@@ -176,7 +176,10 @@
       <workItem from="1696874401341" duration="73000" />
       <workItem from="1696933919256" duration="6318000" />
       <workItem from="1696944962242" duration="5327000" />
-      <workItem from="1696950794081" duration="2957000" />
+      <workItem from="1696950794081" duration="2981000" />
+      <workItem from="1696961885878" duration="26000" />
+      <workItem from="1696963303570" duration="64000" />
+      <workItem from="1697023038957" duration="1528000" />
     </task>
     <task id="LOCAL-00001" summary="v 0.1">
       <option name="closed" value="true" />
@@ -250,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696950299022</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v 0.7.2">
+      <option name="closed" value="true" />
+      <created>1696953790780</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696953790780</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +287,7 @@
     <MESSAGE value="v 0.6" />
     <MESSAGE value="v 0.7" />
     <MESSAGE value="v 0.7.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.7.1" />
+    <MESSAGE value="v 0.7.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.7.2" />
   </component>
 </project>

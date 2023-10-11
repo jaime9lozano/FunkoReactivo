@@ -221,4 +221,27 @@ public class FunkoRepositorioImp implements FunkoRepositorio{
                 Connection::close
         );
     }
+
+    @Override
+    public Flux<Funko> fecha2023() {
+        logger.debug("Buscando todos los funkos lanzados en 2023");
+        String sql = "SELECT * FROM FUNKOS WHERE YEAR(fecha_lanzamiento) = 2023";
+        return Flux.usingWhen(
+                connectionFactory.create(),
+                connection -> Flux.from(connection.createStatement(sql)
+                        .execute()
+                ).flatMap(result -> result.map((row, rowMetadata) ->
+                        Funko.builder()
+                                .cod(row.get("cod", UUID.class))
+                                .nombre(row.get("nombre", String.class))
+                                .tipo(Tipos.valueOf(row.get("modelo", String.class)))
+                                .precio(row.get("precio", Double.class))
+                                .fecha_cre(row.get("fecha_lanzamiento", LocalDate.class))
+                                .myID(row.get("MyID", Long.class))
+                                .build()
+                )),
+                Connection::close
+        );
+    }
+
 }

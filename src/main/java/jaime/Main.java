@@ -41,7 +41,10 @@ public class Main {
         //funkoServicio.mediaFunko().subscribe(System.out::println);
        //System.out.println("Funkos agrupados por modelo");
        //funkoServicio.agrupModelo().subscribe(System.out::println);
-
+        System.out.println("Funkos lanzados en 2023");
+        funkoServicio.fecha2023().subscribe(System.out::println);
+        System.out.println("Funkos de Stitch");
+        funkoServicio.findAllByNombre("Stitch").subscribe(System.out::println);
         System.exit(0);
     }
 }

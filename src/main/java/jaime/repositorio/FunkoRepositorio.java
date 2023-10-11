@@ -12,4 +12,5 @@ public interface FunkoRepositorio extends CrudRepositorio<Funko, Long>{
     Mono<Funko> funkoCaro();
     Mono<Double> mediaFunko();
     Flux<Map<Tipos, Integer>> agrupModelo();
+   Flux<Funko> fecha2023();
 }
