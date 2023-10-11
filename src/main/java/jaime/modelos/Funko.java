@@ -1,6 +1,7 @@
 package jaime.modelos;
 
 import lombok.Builder;
+import lombok.Setter;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
